@@ -9,12 +9,22 @@ app.get('/', (req, res) => {
   res.render('splash-page')
 })
 
-app.get('/login', (req, res) => {
+// Login Route
+app.route('/login')
+ .get((req, res) => {
 	res.render('login')
 })
+	.post((req, res) => {
+		res.send('you logged in')
+	})
 
-app.get('/signup', (req, res) => {
-	res.render('signup')
+	// Signup Route
+app.route('/signup')
+	.get((req, res) => {
+		res.render('signup')
+})
+	.post((req, res) => {
+		res.send('You Signed Up')
 })
 
 app.listen(port, () => console.log(`Express server listening on port ${port}`))
