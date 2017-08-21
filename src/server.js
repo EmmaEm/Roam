@@ -11,14 +11,14 @@ app.get('/', (req, res) => {
 
 // Login Route
 app.route('/login')
-  .get((req, res) => {
+ .get((req, res) => {
     res.render('login')
   })
-  .post((req, res) => {
-    res.send('you logged in')
+ .post((req, res) => {
+   res.send('you logged in')
   })
 
-	// Signup Route
+  // Signup Route
 app.route('/signup')
   .get((req, res) => {
     res.render('signup')
