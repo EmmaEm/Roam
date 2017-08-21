@@ -12,19 +12,19 @@ app.get('/', (req, res) => {
 // Login Route
 app.route('/login')
  .get((req, res) => {
-  res.render('login')
-})
-  .post((req, res) => {
-    res.send('you logged in')
+    res.render('login')
+  })
+ .post((req, res) => {
+   res.send('you logged in')
   })
 
   // Signup Route
 app.route('/signup')
   .get((req, res) => {
     res.render('signup')
-})
+  })
   .post((req, res) => {
     res.send('You Signed Up')
-})
+  })
 
 app.listen(port, () => console.log(`Express server listening on port ${port}`))
