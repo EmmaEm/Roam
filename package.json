@@ -1,0 +1,27 @@
+{
+  "name": "roam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmmaEm/Roam.git"
+  },
+  "author": "Emma Brown & Brandon Gilchrist",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EmmaEm/Roam/issues"
+  },
+  "homepage": "https://github.com/EmmaEm/Roam#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
