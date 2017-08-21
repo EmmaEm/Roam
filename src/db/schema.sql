@@ -5,7 +5,8 @@ CREATE DATABASE roam;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
-  password VARCHAR(255),
+  password VARCHAR(255) NOT NULL,
   picture VARCHAR(255) DEFAULT 'http://www.pieglobal.com/wp-content/uploads/2015/10/placeholder-user.png'
 )
