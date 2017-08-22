@@ -1,9 +1,13 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
+const createUser = require('./db/user-queries.js')
 const port = 3000
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
+
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.get('/', (req, res) => {
   res.render('splash-page')
@@ -24,7 +28,15 @@ app.route('/signup')
     res.render('signup')
   })
   .post((req, res) => {
-    res.send('You Signed Up')
+    const name = req.body.name
+    const email = req.body.email
+    const password = req.body.password
+    createUser(name, email, password)
+      .then(res.send('You Signed Up'))
+      .catch((error) => {
+        console.log("\nError in createUser query\n")
+        throw error
+      })
   })
 
 app.listen(port, () => console.log(`Express server listening on port ${port}`))
