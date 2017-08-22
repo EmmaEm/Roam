@@ -21,7 +21,8 @@
   "homepage": "https://github.com/EmmaEm/Roam#readme",
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "pg-promise": "^6.5.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
