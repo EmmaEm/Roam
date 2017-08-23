@@ -18,7 +18,7 @@ h1, h2, h3 {
 form {
   border: 4px solid rgb(31, 80, 87);
   padding: 5em;
-  margin: 3em;
+  /*margin: 3em;*/
 }
 
 input {
@@ -57,11 +57,13 @@ a{
 .body-container {
   display: flex;
   justify-content: center;
+  margin: 3em;
 }
 
 .center{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .row-space-around {
