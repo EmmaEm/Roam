@@ -1,12 +1,18 @@
 <%- include partials/header.ejs %>
 
-<p>This is the Login Page</p>
+<div class="column center">
 
-<form action="/login" method="post">
-  <input type="text" name="username" id="username">
-  <input type="password" name="password" id="password">
-  <button type="submit">login</button>
-</form>
+  <h2>Login</h2>
+
+  <form action="/login" method="post">
+    <p>E-mail:</p>
+    <input type="text" name="username" id="email">
+    <p>Password:</p>
+    <input type="password" name="password" id="password">
+    <br/>
+    <button type="submit">login</button>
+  </form>
+
+</div>
 
 <%- include partials/footer.ejs %>
-
