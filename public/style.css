@@ -50,8 +50,10 @@ a{
   font-family: 'Baloo Bhaijaan', cursive;
   font-size: 3em;
   margin: 0;
+}
+
+.navbar-text {
   color: white;
-  text-decoration: none;
 }
 
 .body-container {
@@ -80,7 +82,11 @@ a{
 .navbar {
   background-color: rgb(83, 192, 202);
   border-bottom: 3px solid rgb(31, 80, 87);
-  color: white;
+  color: white !important;
   padding: 0;
   margin: 0;
+}
+
+.navbar:nth-child(*) {
+  color: white;
 }
