@@ -1,15 +1,19 @@
 <%- include partials/header.ejs %>
+<div class="column center">
 
-<p>This is the signup page</p>
+  <h2 >Sign up here</h2>
 
-<form action="/signup" method="post">
-  <p>name:</p>
-  <input type="text" name="name" id="username">
-  <p>email:</p>
-  <input type="text" name="email" id="username">
-  <p>password</p>
-  <input type="password" name="password" id="password">
-  <button type="submit">Signup</button>
-</form>
+  <form action="/signup" method="post">
+    <p>Name:</p>
+    <input type="text" name="name" id="username">
+    <p>E-mail:</p>
+    <input type="text" name="email" id="username">
+    <p>Password</p>
+    <input type="password" name="password" id="password">
+    <br/>
+    <button type="submit">Signup</button>
+  </form>
+
+</div>
 
 <%- include partials/footer.ejs %>
