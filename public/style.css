@@ -1,3 +1,17 @@
-body {
-  background-color: black;
+/* Color palette:
+ark green = rgb(33, 53, 12)
+bright green = rgb(126, 159, 53)
+light green = rgb(219, 217, 119)
+bright blue = rgb(83, 192, 202)
+dark blue = 31, 80, 87
+*/
+
+.row-space-around {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.navbar {
+  background-color: rgb(83, 192, 202);
 }
