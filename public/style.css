@@ -30,12 +30,28 @@ input {
 input:focus {
   background-color: rgb(219, 217, 119);
   border: 3px inset rgb(219, 217, 119);
+  /*box-shadow: 0 0 5px red;*/
+}
+
+button {
+  border-radius: 5px;
+  padding: 1em;
+  margin: 3em;
+  font-size: 1em;
+  background-color: rgb(83, 192, 202);
+  border: 5px outset rgb(83, 192, 202);
+}
+
+a{
+    text-decoration: none;
 }
 
 .roam {
   font-family: 'Baloo Bhaijaan', cursive;
   font-size: 3em;
   margin: 0;
+  color: white;
+  text-decoration: none;
 }
 
 .body-container {
