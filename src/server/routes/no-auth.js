@@ -39,9 +39,14 @@ router.route('/login')
       else {
         res.send('sorry, wrong password')
       }
-
     })
-
   })
+
+router.get('/profile/:username', (req, res) => {
+  const username = req.params.username
+  user.getByUsername(username)
+    .then(user => res.render('profile', {user}))
+    .catch(error => console.log(error))
+})
 
 module.exports = router
