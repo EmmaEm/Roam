@@ -1,9 +1,13 @@
 <%- include partials/header.ejs %>
 <div class='user-column'>
   <img src='<%= user.picture %>'/>
-  <div class="white-box">
-    <p>this is your profile page </p>
-    <%= user.name %>
+  <div class='box'>
+    <h1><%= user.name %></h1>
+    <br>
+    <p>Current City: <%= user.current_city %></p>
+    <br>
+    <p>Member since: <%= user.join_date %></p>
+    <button class='edit-profile'>Edit Profile</button>
   </div>
 </div>
 
