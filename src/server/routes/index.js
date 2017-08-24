@@ -1,5 +1,6 @@
 const router = require('express').Router()
-const signupLogin = require('./signup-login')
+const noAuth = require('./no-auth')
 
-router.use('/', signupLogin)
-console.log(signupLogin)
+router.use('/', noAuth)
+
+module.exports = router
