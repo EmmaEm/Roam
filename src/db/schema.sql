@@ -10,5 +10,5 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL,
   picture VARCHAR(255) DEFAULT 'http://www.pieglobal.com/wp-content/uploads/2015/10/placeholder-user.png',
   current_city VARCHAR(255),
-  join_data DATE DEFAULT CURRENT_DATE
+  join_date DATE DEFAULT CURRENT_DATE
 )
