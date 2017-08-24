@@ -46,6 +46,11 @@ a{
     text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .roam {
   font-family: 'Baloo Bhaijaan', cursive;
   font-size: 3em;
@@ -59,7 +64,7 @@ a{
 .body-container {
   display: flex;
   justify-content: center;
-  margin: 3em;
+  /*margin: 3em;*/
 }
 
 .center{
@@ -89,4 +94,20 @@ a{
 
 .navbar:nth-child(*) {
   color: white;
+}
+
+.user-column {
+  width: 30%;
+  background-color: rgb(126, 159, 53);
+  padding: 1em;
+}
+
+.post-column {
+  width: 70%;
+  padding: 3em;
+}
+
+.white-box {
+  background-color: rgba(255, 255, 255, .8);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
 }

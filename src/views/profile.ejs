@@ -1,5 +1,15 @@
 <%- include partials/header.ejs %>
+<div class='user-column'>
+  <img src='<%= user.picture %>'/>
+  <div class="white-box">
+    <p>this is your profile page </p>
+    <%= user.name %>
+  </div>
+</div>
 
-<p>this is your profile page </p>
+<div class='post-column'>
+  <p>This is where the posts go!</p>
+</div>
+
 
 <%- include partials/footer.ejs %>
