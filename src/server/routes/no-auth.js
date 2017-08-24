@@ -1,4 +1,4 @@
-const userQueries = require('../../db/user-queries.js')
+const user = require('../../db/user.js')
 const router = require('express').Router()
 
 createUserSession = (req, res, user) => {
@@ -18,7 +18,7 @@ router.route('/signup')
     const name = req.body.name
     const email = req.body.email
     const password = req.body.password
-    userQueries.createUser(name, email, password)
+    user.create(name, email, password)
       .then(res.redirect('/login'))
   })
 
@@ -29,7 +29,7 @@ router.route('/login')
  .post((req, res) => {
    const email = req.body.email
    const password = req.body.password
-   userQueries.getUserInfo(email)
+   user.getByEmail(email)
     .then(user => {
       if (password === user.password) {
         createUserSession(req, res, user)
