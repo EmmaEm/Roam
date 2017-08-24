@@ -19,7 +19,7 @@ router.route('/signup')
     const email = req.body.email
     const password = req.body.password
     userQueries.createUser(name, email, password)
-      .then(res.send('You Signed Up'))
+      .then(res.redirect('/login'))
   })
 
 router.route('/login')
