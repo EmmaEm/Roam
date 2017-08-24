@@ -1,11 +1,6 @@
 const user = require('../../db/user.js')
 const router = require('express').Router()
 
-createUserSession = (req, res, user) => {
-  req.session.user = user
-        // console.log("user: ", user)
-}
-
 router.get('/', (req, res) => {
   res.render('splash-page')
 })
@@ -27,19 +22,27 @@ router.route('/login')
  .get((req, res) => {
     res.render('login')
   })
- .post((req, res) => {
+router.post('/login', (req, res) => {
    const username = req.body.username
    const password = req.body.password
    user.getByUsername(username)
     .then(user => {
       if (password === user.password) {
-        createUserSession(req, res, user)
+        req.session.user = user
         res.redirect(`/profile/${username}`)
       }
       else {
         res.send('sorry, wrong password')
       }
     })
+  })
+
+router.route('/logout')
+  .get((req, res) => {
+    console.log("before", req.session)
+    req.session.destroy()
+    console.log("after", req.session)
+    res.redirect('/')
   })
 
 router.get('/profile/:username', (req, res) => {
