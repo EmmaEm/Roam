@@ -87,6 +87,7 @@ img {
 .navbar {
   background-color: rgb(83, 192, 202);
   border-bottom: 3px solid rgb(31, 80, 87);
+  /*box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);*/
   color: white !important;
   padding: 0;
   margin: 0;
@@ -112,4 +113,8 @@ img {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
   padding: 2em;
   margin-top: 1em;
+}
+
+.profile-pic {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
 }

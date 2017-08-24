@@ -34,8 +34,7 @@ router.route('/login')
     .then(user => {
       if (password === user.password) {
         createUserSession(req, res, user)
-        // NOTE: this should redirect to the profile page once there is one:
-        res.send('you logged in')
+        res.redirect(`/profile/${username}`)
       }
       else {
         res.send('sorry, wrong password')
