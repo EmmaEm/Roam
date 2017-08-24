@@ -1,8 +1,9 @@
-const createUser = require('../../db/user-queries.js')
+const userQueries = require('../../db/user-queries.js')
 const router = require('express').Router()
 
-createUserSession = (req, res) => {
-  req.session.user = "I'm a cookie!"
+createUserSession = (req, res, user) => {
+  req.session.user = user
+        // console.log("user: ", user)
 }
 
 router.get('/', (req, res) => {
@@ -17,12 +18,8 @@ router.route('/signup')
     const name = req.body.name
     const email = req.body.email
     const password = req.body.password
-    createUser(name, email, password)
+    userQueries.createUser(name, email, password)
       .then(res.send('You Signed Up'))
-      .catch((error) => {
-        console.log("\nError in createUser query\n")
-        throw error
-      })
   })
 
 router.route('/login')
@@ -30,8 +27,21 @@ router.route('/login')
     res.render('login')
   })
  .post((req, res) => {
-   createUserSession(req, res)
-   res.send('you logged in')
+   const email = req.body.email
+   const password = req.body.password
+   userQueries.getUserInfo(email)
+    .then(user => {
+      if (password === user.password) {
+        createUserSession(req, res, user)
+        // NOTE: this should redirect to the profile page once there is one:
+        res.send('you logged in')
+      }
+      else {
+        res.send('sorry, wrong password')
+      }
+
+    })
+
   })
 
   module.exports = router
