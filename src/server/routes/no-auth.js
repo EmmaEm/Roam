@@ -1,6 +1,10 @@
 const createUser = require('../../db/user-queries.js')
 const router = require('express').Router()
 
+createUserSession = (req, res) => {
+  req.session.user = "I'm a cookie!"
+}
+
 router.get('/', (req, res) => {
   res.render('splash-page')
 })
@@ -26,6 +30,7 @@ router.route('/login')
     res.render('login')
   })
  .post((req, res) => {
+   createUserSession(req, res)
    res.send('you logged in')
   })
 
