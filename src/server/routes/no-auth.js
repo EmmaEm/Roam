@@ -16,9 +16,10 @@ router.route('/signup')
   })
   .post((req, res) => {
     const name = req.body.name
+    const username = req.body.username
     const email = req.body.email
     const password = req.body.password
-    user.create(name, email, password)
+    user.create(name, username, email, password)
       .then(res.redirect('/login'))
   })
 
@@ -27,9 +28,9 @@ router.route('/login')
     res.render('login')
   })
  .post((req, res) => {
-   const email = req.body.email
+   const username = req.body.username
    const password = req.body.password
-   user.getByEmail(email)
+   user.getByUsername(username)
     .then(user => {
       if (password === user.password) {
         createUserSession(req, res, user)
@@ -44,4 +45,4 @@ router.route('/login')
 
   })
 
-  module.exports = router
+module.exports = router

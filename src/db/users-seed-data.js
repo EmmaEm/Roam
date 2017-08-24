@@ -1,1 +1,1 @@
-INSERT INTO users (name, username, email, password, current_city) VALUES ('A', 'A', 'a@a.com', 'a', 'Wellington, NZ'), ('B', 'B' 'b@b.com', 'b', 'Oakland, CA'), ('C', 'C', 'c@c.com', 'c', 'Cambridge, England')
+INSERT INTO users (name, username, email, password, current_city) VALUES ('A', 'A', 'a@a.com', 'a', 'Wellington, NZ'), ('B', 'B', 'b@b.com', 'b', 'Oakland, CA'), ('C', 'C', 'c@c.com', 'c', 'Cambridge, England')
