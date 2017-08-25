@@ -51,15 +51,27 @@ img {
   max-height: 100%;
 }
 
-.roam {
-  font-family: 'Baloo Bhaijaan', cursive;
-  font-size: 3em;
-  margin: 0;
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
 }
 
 .navbar-text {
   color: white;
+  margin: 0 3em 0 3em;
 }
+
+.roam {
+  font-family: 'Baloo Bhaijaan', cursive;
+  font-size: 3em;
+  margin-left: 1em;
+}
+
+
 
 .body-container {
   display: flex;
@@ -80,21 +92,13 @@ img {
   align-items: center;
 }
 
-.column {
-  flex-direction: column;
-}
-
 .navbar {
   background-color: rgb(83, 192, 202);
   border-bottom: 3px solid rgb(31, 80, 87);
   /*box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);*/
-  color: white !important;
-  padding: 0;
+  padding: 0 1em 0 1em;
   margin: 0;
-}
-
-.navbar:nth-child(*) {
-  color: white;
+  justify-content: space-between;
 }
 
 .user-column {

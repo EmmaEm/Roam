@@ -3,8 +3,13 @@ const noAuth = require('./no-auth')
 const user = require('./user')
 const userQueries = require('../../db/user.js')
 
-router.use('/', noAuth)
+router.use((req, res, next) => {
+  let loggedIn = false
+    if (req.session.user) loggedIn = true
+  res.locals = {loggedIn: loggedIn}
+  next()
+})
 
-router.use('/', user)
+router.use('/', noAuth)
 
 module.exports = router
