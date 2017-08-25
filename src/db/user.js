@@ -23,12 +23,12 @@ getByUsername = (username) => {
     })
 }
 
-update = (id , name, current_city) => {
+update = (username , name, current_city) => {
   return db.one(`
     UPDATE users
     SET (name, current_city) = ($2, $3)
-    WHERE id = $1
-  `, [id , name, current_city])
+    WHERE username = $1
+  `, [username , name, current_city])
 }
 
 module.exports = {
