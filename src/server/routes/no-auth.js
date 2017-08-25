@@ -19,22 +19,18 @@ router.route('/signup')
   })
 
 router.route('/login')
- .get((req, res) => {
-    res.render('login')
-  })
-router.post('/login', (req, res) => {
-   const username = req.body.username
-   const password = req.body.password
-   user.getByUsername(username)
-    .then(user => {
-      if (password === user.password) {
-        req.session.user = user
-        res.redirect(`/profile/${username}`)
-      }
-      else {
-        res.send('sorry, wrong password')
-      }
-    })
+  .get( (req, res) => res.render('login') )
+  .post( (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+    user.getByUsername(username)
+      .then(user => {
+        if (password === user.password) {
+          req.session.user = user
+          res.redirect(`/profile/${username}`)
+        }
+        else res.send('sorry, wrong password')
+      })
   })
 
 router.route('/logout')
