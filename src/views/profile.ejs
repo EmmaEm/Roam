@@ -11,6 +11,25 @@
   </div>
 </div>
 
+<div class='user-column edit'>
+  <img class='profile-pic' src='<%= user.picture %>'/>
+  <div class='box'>
+    <form class='' action='index.html' method='post'>
+      <p>Name:</p>
+      <input class='edit-input' type='text' name='name' value='<%= user.name %>'>
+      <br>
+      <p>Current City:</p>
+      <input class='edit-input' type='text' name='current_city' value='<%= user.current_city %>'>
+      <br>
+      <br>
+      <br>
+      <p>Member since: <%= user.join_date %></p>
+
+    </form>
+    <button class='edit-profile'>Save Changes</button>
+  </div>
+</div>
+
 <div class='post-column'>
   <p>This is where the posts go!</p>
 </div>
