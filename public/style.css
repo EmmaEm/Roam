@@ -17,6 +17,7 @@ h1, h2, h3, input {
 
 input {
   font-size: 0.875em;
+  max-width: 100%
 }
 
 .edit-input {
@@ -114,7 +115,9 @@ img {
 }
 
 .edit {
-  display: block;
+  position: absolute;
+  left: 0;
+  z-index: -1;
 }
 
 .post-column {
