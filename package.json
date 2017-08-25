@@ -2,9 +2,9 @@
   "name": "roam",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
     "schema": "psql < src/db/schema.sql",
     "seed-data": "psql -d roam < src/db/users-seed-data.js"
