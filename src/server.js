@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const path = require('path')
 const session = require('express-session')
-const routes = require('./server/routes')note
+const routes = require('./server/routes')
 const port = 3000
 
 app.set('view engine', 'ejs')
