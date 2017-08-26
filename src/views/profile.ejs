@@ -4,13 +4,11 @@
   <img class='profile-pic' src='<%= user.picture %>'/>
   <div class='box'>
     <form action='/profile/<%= user.username %>' method='post'>
-      <p>'/profile/<%= user.username %></p>
       <p>Name: </p>
       <input class='edit-input' type='text' name='name' value='<%= user.name %>'>
       <br>
       <p>Current City:</p>
       <input class='edit-input' type='text' name='current_city' value='<%= user.current_city %>'>
-      <br>
       <br>
       <br>
       <p>Member since: <%= user.join_date %></p>
