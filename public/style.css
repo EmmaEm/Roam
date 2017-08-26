@@ -20,9 +20,9 @@ input {
   max-width: 100%
 }
 
-.edit-input {
+/*.edit-input {
   background-color: transparent;
-}
+}*/
 
 input:focus {
   background-color: rgb(219, 217, 119);
@@ -109,14 +109,14 @@ img {
 }
 
 .user-column {
+  position:absolute;
+  left: 0;
   width: 30%;
   background-color: rgb(126, 159, 53);
   padding: 1em;
 }
 
 .edit {
-  position: absolute;
-  left: 0;
   z-index: -1;
 }
 
