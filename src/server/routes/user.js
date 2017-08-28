@@ -8,7 +8,7 @@ router.post('/profile/:username', (req, res) => {
 
   user.update(username, name, current_city)
     .then(user => res.render('profile', {user}))
-    .catch(error => console.log( '---===error===---', error ))
+    .catch(error => console.log( 'error', error ))
 })
 
 module.exports = router
