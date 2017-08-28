@@ -12,4 +12,20 @@ CREATE TABLE users (
   picture VARCHAR(255) DEFAULT 'http://www.pieglobal.com/wp-content/uploads/2015/10/placeholder-user.png',
   current_city VARCHAR(255),
   join_date DATE DEFAULT CURRENT_DATE
-)
+);
+
+CREATE TABLE cities (
+  id  SERIAL PRIMARY KEY,
+  city VARCHAR(50) NOT NULL,
+  state VARCHAR(50),
+  country VARCHAR(50)
+);
+
+CREATE TABLE posts (
+  id  SERIAL PRIMARY KEY,
+  title VARCHAR(100) NOT NULL,
+  city VARCHAR(50) NOT NULL,
+  content VARCHAR(255),
+  user_id INT,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
