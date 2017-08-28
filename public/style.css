@@ -113,7 +113,7 @@ img {
   left: 0;
   width: 30%;
   background-color: rgb(126, 159, 53);
-  padding: 1em;
+  padding: 3%;
 }
 
 .edit {
@@ -121,8 +121,9 @@ img {
 }
 
 .post-column {
-  width: 70%;
-  padding: 3em;
+  width: 60%;
+  position: absolute;
+  left: 40%
 }
 
 .box {
