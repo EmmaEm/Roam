@@ -42,8 +42,8 @@ router.route('/logout')
 router.get('/profile/:username', (req, res) => {
   const username = req.params.username
   user.getByUsername(username)
-    .then(user => res.render('profile', {user}))
-    .catch(error => console.log(error))
+    .then( posts => res.render('profile', { posts }) )
+    .catch( error => console.log(error))
 })
 
 
