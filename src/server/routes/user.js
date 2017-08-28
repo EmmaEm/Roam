@@ -1,16 +1,14 @@
 const user = require('../../db/user.js')
 const router = require('express').Router()
 
-// router.post('/profile/:username', (req, res) => {
-//   const name = req.body.name
-//   const current_city = req.body.current_city
-//   const username = req.params.username
-//
-//   console.log('name', name);
-//   console.log('current_city', current_city);
-//   console.log('username',username);
-//
-//   user.update(username, name, city)
-// })
+router.post('/profile/:username', (req, res) => {
+  const username = req.params.username
+  const name = req.body.name
+  const current_city = req.body.current_city
+
+  user.update(username, name, current_city)
+    .then(user => res.render('profile', {user}))
+    .catch(error => console.log( '---===error===---', error ))
+})
 
 module.exports = router

@@ -11,6 +11,6 @@ router.use( (req, res, next) => {
 })
 
 router.use('/', noAuth)
-router.use('/user', user)
+router.use('/', user)
 
 module.exports = router
