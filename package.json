@@ -7,7 +7,7 @@
     "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1",
     "schema": "psql < src/db/schema.sql",
-    "seed-data": "psql -d roam < src/db/users-seed-data.js"
+    "seed-data": "psql -d roam < src/db/users-seed-data.sql"
   },
   "repository": {
     "type": "git",
