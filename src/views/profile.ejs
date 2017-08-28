@@ -1,4 +1,22 @@
 <%- include partials/header.ejs %>
+
+<div class='edit user-column'>
+  <img class='profile-pic' src='<%= user.picture %>'/>
+  <div class='box'>
+    <form action='/profile/<%= user.username %>' method='post'>
+      <p>Name: </p>
+      <input class='edit-input' type='text' name='name' value='<%= user.name %>'>
+      <br>
+      <p>Current City:</p>
+      <input class='edit-input' type='text' name='current_city' value='<%= user.current_city %>'>
+      <br>
+      <br>
+      <p>Member since: <%= user.join_date %></p>
+      <button type="submit" class='edit-profile'>Save Changes</button>
+    </form>
+  </div>
+</div>
+
 <div class='user-column'>
   <img class='profile-pic' src='<%= user.picture %>'/>
   <div class='box'>
@@ -10,6 +28,8 @@
     <button class='edit-profile'>Edit Profile</button>
   </div>
 </div>
+
+
 
 <div class='post-column'>
   <p>This is where the posts go!</p>

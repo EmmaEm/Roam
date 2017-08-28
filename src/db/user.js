@@ -23,7 +23,21 @@ getByUsername = (username) => {
     })
 }
 
+update = (username , name, current_city) => {
+  return db.one(`
+    UPDATE users
+    SET (name, current_city) = ($2, $3)
+    WHERE username = $1
+    RETURNING *
+  `, [username , name, current_city])
+  .catch((error) => {
+    console.log("\nError in update query\n")
+    throw error
+  })
+}
+
 module.exports = {
   create,
-  getByUsername
+  getByUsername,
+  update
 }

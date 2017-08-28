@@ -11,21 +11,18 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, input {
   font-family: 'Montserrat', sans-serif;
 }
 
-form {
-  border: 4px solid rgb(31, 80, 87);
-  padding: 5em;
-  /*margin: 3em;*/
+input {
+  font-size: 0.875em;
+  max-width: 100%
 }
 
-input {
-  padding: .5em;
-  border-radius: 5px;
-  border: 3px inset rgb(126, 159, 53)
-}
+/*.edit-input {
+  background-color: transparent;
+}*/
 
 input:focus {
   background-color: rgb(219, 217, 119);
@@ -51,6 +48,17 @@ img {
   max-height: 100%;
 }
 
+.signup-login {
+  border: 4px solid rgb(31, 80, 87);
+  padding: 5em;
+}
+
+.signup-login-input {
+  padding: .5em;
+  border-radius: 5px;
+  border: 3px inset rgb(126, 159, 53)
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -68,9 +76,8 @@ img {
 .roam {
   font-family: 'Baloo Bhaijaan', cursive;
   font-size: 3em;
-  margin-left: 1em;
+  margin: 1em 0 1em 0;
 }
-
 
 
 .body-container {
@@ -102,9 +109,15 @@ img {
 }
 
 .user-column {
+  position:absolute;
+  left: 0;
   width: 30%;
   background-color: rgb(126, 159, 53);
   padding: 1em;
+}
+
+.edit {
+  z-index: -1;
 }
 
 .post-column {
