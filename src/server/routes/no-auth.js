@@ -1,5 +1,4 @@
 const user = require('../../db/user.js')
-const posts = require('../../db/user.js')
 const router = require('express').Router()
 
 router.get('/', (req, res) => {
@@ -43,13 +42,8 @@ router.route('/logout')
 router.get('/profile/:username', (req, res) => {
   const username = req.params.username
   user.getByUsername(username)
-    .then( posts.getByUsername(username) )
-    .then( (user, posts) => {
-      console.log('posts', posts)
-      console.log('user', user)
-      res.render('profile', {user, posts})
-    })
-    .catch( error => console.log(error) )
+    .then( posts => res.render('profile', { posts }) )
+    .catch( error => console.log(error))
 })
 
 

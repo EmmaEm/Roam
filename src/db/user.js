@@ -14,9 +14,12 @@ create = (name, username, email, password) => {
 }
 
 getByUsername = (username) => {
-  return db.one(`
-    SELECT * FROM users WHERE username = $1`,
-    [username])
+  return db.query(`
+    SELECT * FROM users
+    LEFT OUTER JOIN posts
+    ON users.user_id = posts.user_id
+    WHERE users.username = $1
+    `, [username])
     .catch((error) => {
       console.log("\nError in getByUsername query\n")
       throw error

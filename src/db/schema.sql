@@ -4,7 +4,7 @@ CREATE DATABASE roam;
 \c roam;
 
 CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
+  user_id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   username VARCHAR(20) NOT NULL UNIQUE,
   email VARCHAR(255) NOT NULL UNIQUE,
@@ -15,17 +15,17 @@ CREATE TABLE users (
 );
 
 CREATE TABLE cities (
-  id  SERIAL PRIMARY KEY,
+  city_id  SERIAL PRIMARY KEY,
   city VARCHAR(50) NOT NULL,
   state VARCHAR(50),
   country VARCHAR(50)
 );
 
 CREATE TABLE posts (
-  id  SERIAL PRIMARY KEY,
+  post_id  SERIAL PRIMARY KEY,
   title VARCHAR(100) NOT NULL,
   city VARCHAR(50) NOT NULL,
   content VARCHAR(255),
   user_id INT,
-  FOREIGN KEY (user_id) REFERENCES users(id)
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
 );

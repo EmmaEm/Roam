@@ -1,30 +1,30 @@
 <%- include partials/header.ejs %>
 
 <div class='edit user-column'>
-  <img class='profile-pic' src='<%= user.picture %>'/>
+  <img class='profile-pic' src='<%= posts[0].picture %>'/>
   <div class='box'>
-    <form action='/profile/<%= user.username %>' method='post'>
+    <form action='/profile/<%= posts[0].username %>' method='post'>
       <p>Name: </p>
-      <input class='edit-input' type='text' name='name' value='<%= user.name %>'>
+      <input class='edit-input' type='text' name='name' value='<%= posts[0].name %>'>
       <br>
       <p>Current City:</p>
-      <input class='edit-input' type='text' name='current_city' value='<%= user.current_city %>'>
+      <input class='edit-input' type='text' name='current_city' value='<%= posts[0].current_city %>'>
       <br>
       <br>
-      <p>Member since: <%= user.join_date %></p>
+      <p>Member since: <%= posts[0].join_date %></p>
       <button type="submit" class='edit-profile'>Save Changes</button>
     </form>
   </div>
 </div>
 
 <div class='user-column'>
-  <img class='profile-pic' src='<%= user.picture %>'/>
+  <img class='profile-pic' src='<%= posts[0].picture %>'/>
   <div class='box'>
-    <h1><%= user.name %></h1>
+    <h1><%= posts[0].name %></h1>
     <br>
-    <p>Current City: <%= user.current_city %></p>
+    <p>Current City: <%= posts[0].current_city %></p>
     <br>
-    <p>Member since: <%= user.join_date %></p>
+    <p>Member since: <%= posts[0].join_date %></p>
     <button class='edit-profile'>Edit Profile</button>
   </div>
 </div>
@@ -32,10 +32,15 @@
 
 
 <div class='post-column'>
-  <p class='box blue-box' > <%= console.log(posts) %> </p>
-  <p class='box blue-box' >This is where the posts go!</p>
-  <p class='box blue-box' >This is where the posts go!</p>
-  <p class='box blue-box' >This is where the posts go!</p>
+  <% if (posts[0].title) {
+    posts.forEach( post => { %>
+      <p class='box blue-box' >  <%= post.title%> </p>
+    <% })
+  } else { %>
+    <p> This user has no posts </p>
+  <% } %>
+
+
 </div>
 
 
