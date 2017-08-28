@@ -7,8 +7,8 @@ router.post('/profile/:username', (req, res) => {
   const current_city = req.body.current_city
 
   user.update(username, name, current_city)
-    .then(user => res.render('profile', {user}))
-    .catch(error => console.log( 'error', error ))
+    .then( res.redirect( `/profile/${username}` ) )
+    .catch( error => console.log( 'error', error ) )
 })
 
 module.exports = router

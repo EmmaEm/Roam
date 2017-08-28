@@ -20,7 +20,7 @@
 <div class='user-column'>
   <img class='profile-pic' src='<%= posts[0].picture %>'/>
   <div class='box'>
-    <h1><%= posts[0].name %></h1>
+    <h2><%= posts[0].name %></h2>
     <br>
     <p>Current City: <%= posts[0].current_city %></p>
     <br>
@@ -37,7 +37,7 @@
       <p class='box blue-box' >  <%= post.title%> </p>
     <% })
   } else { %>
-    <p> This user has no posts </p>
+    <p class='box blue-box'> This user has no posts </p>
   <% } %>
 
 
