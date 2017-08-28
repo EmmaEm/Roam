@@ -46,6 +46,10 @@ router.get('/profile/:username', (req, res) => {
     .catch( error => console.log(error))
 })
 
+router.get('/post/:postId', (req, res) => {
+  res.render('post-details')
+})
+
 
 
 module.exports = router
