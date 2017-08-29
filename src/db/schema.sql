@@ -18,14 +18,16 @@ CREATE TABLE cities (
   city_id  SERIAL PRIMARY KEY,
   city VARCHAR(50) NOT NULL,
   state VARCHAR(50),
-  country VARCHAR(50)
+  country VARCHAR(50),
+  picture VARCHAR(255) DEFAULT 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'
 );
 
 CREATE TABLE posts (
   post_id  SERIAL PRIMARY KEY,
-  title VARCHAR(100) NOT NULL,
-  city VARCHAR(50) NOT NULL,
-  content VARCHAR(255),
+  city_id INT,
   user_id INT,
+  city VARCHAR(50) NOT NULL,
+  title VARCHAR(100) NOT NULL,
+  content VARCHAR(255),
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
