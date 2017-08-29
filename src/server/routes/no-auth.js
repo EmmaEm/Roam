@@ -52,6 +52,12 @@ router.get('/post/:postId', (req, res) => {
     .then(post => res.render('post-details', {post}))
 })
 
+router.get('/city/:cityName', (req, res) => {
+  res.render('city')
+  // posts.getPostByCity(req.params.postId)
+  //   .then(post => res.render('post-details', {post}))
+})
+
 
 
 module.exports = router
