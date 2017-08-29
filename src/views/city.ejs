@@ -1,7 +1,18 @@
 <%- include partials/header.ejs %>
 
 <div class="column">
-  city details here!
+  <h1 class="center"> <%= city %> </h1>
+  <% if (posts[0]) {
+    posts.forEach( post => { %>
+      <a href="/post/<%= post.post_id%>">
+        <div class='box blue-box'>
+          <p>  <%= post.title %> </p>
+        </div>
+      </a>
+    <% })
+  } else { %>
+    <p class='box blue-box'> This city has no posts </p>
+  <% } %>
 </div>
 
 <%- include partials/footer.ejs %>
