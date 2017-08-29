@@ -1,7 +1,8 @@
 <%- include partials/header.ejs %>
 
 <div class="column">
-  <h1 class="center"> <%= city %> </h1>
+  <h1 class="center"> <%= posts[0].city %> </h1>
+  <img src="<%= posts[0].picture %>" alt="">
   <% if (posts[0]) {
     posts.forEach( post => { %>
       <a href="/post/<%= post.post_id%>">
