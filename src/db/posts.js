@@ -9,6 +9,15 @@ getByPostId = (id) => {
   })
 }
 
+getByCity = (city) => {
+  return db.query(`SELECT * FROM posts WHERE city = $1 ORDER BY post_id DESC`, [city])
+  .catch((error) => {
+    console.log("\nError in posts.getByCity\n")
+    throw error
+  })
+}
+
 module.exports = {
-  getByPostId
+  getByPostId,
+  getByCity
 }

@@ -49,7 +49,13 @@ router.get('/profile/:username', (req, res) => {
 
 router.get('/post/:postId', (req, res) => {
   posts.getByPostId(req.params.postId)
-    .then(post => res.render('post-details', {post}))
+    .then( post => res.render('post-details', { post }) )
+})
+
+router.get('/city/:cityName', (req, res) => {
+  const city = req.params.cityName
+  posts.getByCity(city)
+    .then( posts => res.render('city', { posts, city }) )
 })
 
 
