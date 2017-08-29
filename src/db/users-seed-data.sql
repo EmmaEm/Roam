@@ -4,6 +4,7 @@ INSERT INTO posts (title, city, content, user_id) VALUES
 ('Icy Wasteland of the Dead', 'The Wall', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '1'),
 ('Experience Targaryen History', 'Dragonstone', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '1'),
 ('Queen Bitch Lives Here', 'King''s Landing', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '1'),
+('Too Hot', 'King''s Landing', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '3'),
 ('Too many people', 'King''s Landing', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2');
 
 INSERT INTO cities (city, state, country) VALUES
