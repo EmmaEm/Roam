@@ -5,29 +5,22 @@
   <% if (posts[0]) { %>
     <h1 class="center"> <%= posts[0].city %> </h1>
     <img src="<%= posts[0].picture %>" alt="">
-    <% posts.forEach( post => { %>
-      <a href="/post/<%= post.post_id%>">
-        <div class='box blue-box'>
-          <p>  <%= post.title %> </p>
-        </div>
-      </a>
-    <% }) %>
-
-    <form class="signup-login" action="/post" method="post">
-      <p>Title:</p>
-      <input class="signup-login-input" type="text" name="title">
-      <p>Content:</p>
-      <textarea class="signup-login-input" type="text" name="content">
-      <br/>
-      <button type="submit">login</button>
-    </form>
-
-  <% } else { %>
-    <p class='box blue-box'> This city has no posts </p>
-  <% } %>
-
-
-
+    <% if(posts[0].title) {
+      posts.forEach( post => { %>
+        <a href="/post/<%= post.post_id%>">
+          <div class='box blue-box'>
+            <p> <%= post.title %> </p>
+          </div>
+        </a>
+      <% }) %>
+      <button type="submit">new post</button>
+    <% } else { %>
+      <p class='box blue-box'> This city has no posts </p>
+    <% }
+  } else { %>
+    <h2> We're sorry, we do not currently have a page for <%= city %>. </h2>
+  <% }%>
+  
 </div>
 
 <%- include partials/footer.ejs %>

@@ -10,7 +10,7 @@ getByPostId = (id) => {
 }
 
 getByCity = (city) => {
-  return db.query(`SELECT * FROM posts JOIN cities ON posts.city_id = cities.city_id WHERE posts.city = $1 ORDER BY post_id DESC`, [city])
+  return db.query(`SELECT * FROM posts RIGHT OUTER JOIN cities ON posts.city_id = cities.city_id WHERE cities.city = $1 ORDER BY post_id DESC`, [city])
   .catch((error) => {
     console.log("\nError in posts.getByCity\n")
     throw error
