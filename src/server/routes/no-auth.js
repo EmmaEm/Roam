@@ -1,4 +1,5 @@
 const user = require('../../db/user.js')
+const posts = require('../../db/posts.js')
 const router = require('express').Router()
 
 router.get('/', (req, res) => {
@@ -44,6 +45,11 @@ router.get('/profile/:username', (req, res) => {
   user.getByUsername(username)
     .then( posts => res.render('profile', { posts }) )
     .catch( error => console.log(error))
+})
+
+router.get('/post/:postId', (req, res) => {
+  posts.getByPostId(req.params.postId)
+    .then(post => res.render('post-details', {post}))
 })
 
 

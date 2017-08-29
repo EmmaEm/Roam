@@ -1,0 +1,9 @@
+<%- include partials/header.ejs %>
+
+<div class="column">
+  <h2 class='center'><%= post.title%></h2>
+  <h3 class='center'>A review of &nbsp <a href="/city/<%= post.city %>"> <%= post.city %> </a> &nbsp by &nbsp <a href="/profile/<%= post.username %>"><%= post.username %></a></h3>
+  <p><%= post.content %></p>
+</div>
+
+<%- include partials/footer.ejs %>

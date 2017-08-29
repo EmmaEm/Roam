@@ -34,7 +34,11 @@
 <div class='post-column'>
   <% if (posts[0].title) {
     posts.forEach( post => { %>
-      <p class='box blue-box' >  <%= post.title%> </p>
+      <a href="/post/<%= post.post_id%>">
+        <div class='box blue-box'>
+          <p>  <%= post.title %> </p>
+        </div>
+      </a>
     <% })
   } else { %>
     <p class='box blue-box'> This user has no posts </p>
