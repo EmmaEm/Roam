@@ -26,7 +26,6 @@ CREATE TABLE posts (
   post_id  SERIAL PRIMARY KEY,
   city_id INT,
   user_id INT,
-  city VARCHAR(50) NOT NULL,
   title VARCHAR(100) NOT NULL,
   content VARCHAR(255),
   FOREIGN KEY (user_id) REFERENCES users(user_id)
