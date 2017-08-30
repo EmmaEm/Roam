@@ -1,11 +1,11 @@
 INSERT INTO users (name, username, email, password, current_city) VALUES ('Daenerys', 'Khaleesi', 'dragons@ravens.com', 'Viserion', 'Dragonstone'), ('Jon Snow', 'knownothing', 'kingofthenorth@ravens.com', 'Ghost', 'Winterfell'), ('Arya Stark', 'noone', 'assassin@ravens.com', 'valarmorghulis', 'Winterfell');
 
-INSERT INTO posts (city_id, title, city, content, user_id) VALUES
-(1, 'Icy Wasteland of the Dead', 'The Wall', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '1'),
-(4, 'Experience Targaryen History', 'Dragonstone', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '1'),
-(3, 'Queen Bitch Lives Here', 'King''s Landing', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '1'),
-(3, 'Too Hot', 'King''s Landing', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '3'),
-(3, 'Too many people', 'King''s Landing', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2');
+INSERT INTO posts (city_id, title, content, user_id) VALUES
+(1, 'Icy Wasteland of the Dead', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '1'),
+(4, 'Experience Targaryen History', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '1'),
+(3, 'Queen Bitch Lives Here', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '1'),
+(3, 'Too Hot', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '3'),
+(3, 'Too many people', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2');
 
 INSERT INTO cities (city, state, country, picture) VALUES
 ('The Wall', 'The North', 'Westeros', 'https://vignette4.wikia.nocookie.net/gameofthrones/images/9/97/The_Wall_from_the_south.jpg/revision/latest?cb=20150323201042'),

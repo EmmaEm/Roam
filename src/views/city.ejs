@@ -1,19 +1,39 @@
 <%- include partials/header.ejs %>
 
 <div class="column">
-  <h1 class="center"> <%= posts[0].city %> </h1>
-  <img src="<%= posts[0].picture %>" alt="">
-  <% if (posts[0]) {
-    posts.forEach( post => { %>
-      <a href="/post/<%= post.post_id%>">
-        <div class='box blue-box'>
-          <p>  <%= post.title %> </p>
-        </div>
-      </a>
-    <% })
-  } else { %>
-    <p class='box blue-box'> This city has no posts </p>
-  <% } %>
+
+  <% if (posts[0]) { %>
+    <h1 class="center"> <%= posts[0].city %> </h1>
+    <img src="<%= posts[0].picture %>" alt="">
+    <% if(posts[0].title) {
+      posts.forEach( post => { %>
+        <a href="/post/<%= post.post_id%>">
+          <div class='box blue-box'>
+            <p> <%= post.title %> </p>
+          </div>
+        </a>
+      <% }) %>
+    <% } else { %>
+      <p class='box blue-box'> This city has no posts </p>
+    <% } %>
+
+    <div class="modal">
+      <form class="modal-box column center" action="/city/<%= posts[0].city %>" method="post">
+        <button type="reset" class="hide-post-modal">X</button>
+        <h2>Create new post:</h2>
+        <p>Title:</p>
+        <input class="form-input modal-input" name="title">
+        <p>Content:</p>
+        <textarea class="form-input modal-input" rows="7" name="content"></textarea>
+        <input name="city_id" value="<%= posts[0].city_id %>" style="display:none">
+        <button type="submit">submit post</button>
+      </form>
+    </div>
+    <button class="show-post-modal" type="submit">new post</button>
+  <% } else { %>
+    <h2> We're sorry, we do not currently have a page for <%= city %>. </h2>
+  <% }%>
+
 </div>
 
 <%- include partials/footer.ejs %>

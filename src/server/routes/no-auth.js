@@ -26,8 +26,8 @@ router.route('/login')
     const password = req.body.password
     user.getByUsername(username)
       .then(user => {
-        if (password === user.password) {
-          req.session.user = user
+        if (password === user[0].password) {
+          req.session.user = user[0]
           res.redirect(`/profile/${username}`)
         }
         else res.send('sorry, wrong password')
