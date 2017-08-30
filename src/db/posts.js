@@ -5,6 +5,7 @@ getByPostId = (id) => {
   return db.one(`
     SELECT * FROM posts
     JOIN users USING(user_id)
+    JOIN cities USING(city_id)
     WHERE post_id = $1`,
     [id])
   .catch((error) => {
