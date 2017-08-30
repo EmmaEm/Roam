@@ -13,14 +13,25 @@
           </div>
         </a>
       <% }) %>
-      <button type="submit">new post</button>
     <% } else { %>
       <p class='box blue-box'> This city has no posts </p>
-    <% }
-  } else { %>
+    <% } %>
+
+    <div class="modal">
+      <form class="modal-box column center" action="/post" method="post">
+        <h2>Create new post:</h2>
+        <p>Title:</p>
+        <input class="form-input modal-input" name="title">
+        <p>Content:</p>
+        <textarea class="form-input modal-input" rows="7" name="content"></textarea>
+        <button type="submit">submit post</button>
+      </form>
+    </div>
+    <button class="new-post-button" type="submit">new post</button>
+  <% } else { %>
     <h2> We're sorry, we do not currently have a page for <%= city %>. </h2>
   <% }%>
-  
+
 </div>
 
 <%- include partials/footer.ejs %>
