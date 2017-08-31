@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000
 
 const session = require('express-session')
 const Simple = require('connect-pg-simple')(session)
-// const connectionString = require('./db/db.js')
+const connectionString = require('./db/db.js').connectionString
 
 
 app.set('view engine', 'ejs')
