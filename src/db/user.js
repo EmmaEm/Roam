@@ -38,8 +38,17 @@ update = (username , name, current_city) => {
   })
 }
 
+updatePhoto = (username, picture) => {
+  return db.none('UPDATE users SET picture = $2 WHERE username = $1', [username, picture])
+  .catch((error) => {
+    console.log("\nError in update query\n")
+    throw error
+  })
+}
+
 module.exports = {
   create,
   getByUsername,
-  update
+  update,
+  updatePhoto
 }

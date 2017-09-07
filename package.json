@@ -10,7 +10,6 @@
     "seed-data": "npm run schema && psql -d roam < src/db/users-seed-data.sql",
     "load_session_store": "psql roam < node_modules/connect-pg-simple/table.sql"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EmmaEm/Roam.git"

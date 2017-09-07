@@ -21,4 +21,13 @@ router.post('/city/:cityName', (req, res) => {
     .then( res.redirect( `/city/${req.params.cityName}` ) )
 })
 
+router.post('/profile/photo/:username', (req, res) => {
+  const picture = req.body.content
+  const username = req.params.username
+
+  user.updatePhoto(username, picture)
+    .then( res.redirect( `/profile/${username}` ) )
+
+})
+
 module.exports = router

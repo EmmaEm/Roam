@@ -2,6 +2,12 @@
 
 <div class='edit user-column'>
   <img class='profile-pic' src='<%= posts[0].picture %>'/>
+
+  <form action="/profile/photo/<%= posts[0].username %>" method="post">
+    <input type="hidden" role="uploadcare-uploader" name="content" data-images-only/>
+    <button type="submit" class='edit-profile'>Submit</button>
+  </form>
+
   <div class='box'>
     <form action='/profile/<%= posts[0].username %>' method='post'>
       <p>Name: </p>

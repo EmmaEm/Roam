@@ -10,3 +10,5 @@ document.querySelectorAll('.edit-profile').forEach( button => {
 
 document.querySelector('.show-post-modal').addEventListener('click', showModal )
 document.querySelector('.hide-post-modal').addEventListener('click', hideModal )
+
+// const  multiWidget = uploadcare.MultipeWidget('[role=uploadcare-uploader][data-multiple]')
